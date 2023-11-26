@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     console.log("loaded DOM");
+    createDatePicker();
 
     const apiUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?';
     const apiKey = 'apikey=Hf0KqGJKBsqkawRAf25zge6dH6S2t2EA';
 
-    let eventsList;
+    let eventsList = [];
 
     function fetchData(keyword) {
         fetch(apiUrl + `keyword=${keyword}&` + apiKey)
@@ -15,9 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             .then((data) => {
                 eventsList = data;
-                console.log(eventsList);
+                searchResult();
             });
-        searchResult();
+
+
     };
 
     /**
@@ -44,16 +46,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
         inputCalendar.appendChild(datePicker);
 
-        inputCalendar.addEventListener('click', function () {
-            datePicker.style.display = datePicker.style.display === 'none' ? 'block' : 'none';
-        });
     }
 
-    createDatePicker();
+
 
 
     function searchResult() {
         document.getElementsByClassName('info-box')[0].innerHTML = "";
+
+        let searchList = document.getElementsByClassName('info-box')[0];
+
+        result = document.createElement('p');
+
+        result.innerHTML = JSON.stringify(eventsList._embedded.events[0].name);
+
+        searchList.appendChild(result);
+
+        console.log(JSON.stringify(eventsList._embedded.events[0].name) + 'It worked');
 
     }
 
