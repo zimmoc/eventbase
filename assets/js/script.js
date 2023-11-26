@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let eventsList;
 
-    function fetchData(keyword) {
-        fetch(apiUrl + `keyword=${keyword}&` + apiKey)
+    function fetchData(keyword, searchDate) {
+        fetch(apiUrl + `keyword=${keyword}&` + `localStartDateTime=${searchDate}&` + apiKey)
             .then((response) => {
                 return response.json();
             })
@@ -26,7 +26,15 @@ document.addEventListener("DOMContentLoaded", function () {
         if (event.key === 'Enter') {
             const keyword = document.getElementById('keywordInput').value;
             console.log("Input registered");
-            fetchData(keyword);
+
+            const today = new Date();
+            let day = today.getDate();
+            let month = today.getMonth();
+            let year = today.getFullYear();
+            let searchDate = `${year}-${month}-${day}`;
+
+            fetchData(keyword, searchDate);
+            console.log(searchDate);
         }
     });
 
