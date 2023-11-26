@@ -366,3 +366,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 #input-calendar i {
     pointer-events: none;
 }
+
+.searchResult {
+    display: inline-block;
+    width: 76.875%;
+    margin-left: 12%;
+    margin-right: 12%;
+
+}

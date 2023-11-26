@@ -15,7 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
             })
 
             .then((data) => {
-                eventsList = data;
+                eventsList = data._embedded.events;
+                console.log(eventsList);
                 searchResult();
             });
 
@@ -35,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+
     function createDatePicker() {
         const inputCalendar = document.getElementById('input-calendar');
 
@@ -52,18 +54,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     function searchResult() {
-        document.getElementsByClassName('info-box')[0].innerHTML = "";
-
         let searchList = document.getElementsByClassName('info-box')[0];
+        searchList.classList.add('resultsList');
+        searchList.classList.remove('info-box');
 
-        result = document.createElement('p');
+        /* for (let i = 0; i < eventsList.length; i++) {
+            const eventName = eventsList[i].name || 'Event Name Not Specified';
 
-        result.innerHTML = JSON.stringify(eventsList._embedded.events[0].name);
+            let htmlContent = `
+            <h3>${eventName}</h3>
+            `;
 
-        searchList.appendChild(result);
+            searchList.innerHTML = htmlContent;
 
-        console.log(JSON.stringify(eventsList._embedded.events[0].name) + 'It worked');
+        }
+        */
 
+        let htmlContent;
+
+
+        eventsList.forEach((concert) =>
+            htmlContent += `
+            <div class="searchResult">
+                    <h3 class="searchName">${concert.name}</h3>
+                    <p class="dateResult">${concert.dates.start.localDate}</p>
+                <div class="resultInfo">
+                    <span class="orange-rect"></span>
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="resultTickets">
+                    <span class="orange-rect"></span>
+                    <p></p>
+                    <p></p>
+                </div>
+            </div>
+            `
+
+        );
+
+        searchList.innerHTML = htmlContent;
     }
 
 });
