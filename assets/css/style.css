@@ -314,6 +314,8 @@ footer {
     flex-wrap: nowrap;
     padding-left: 20px;
     padding-right: 20px;
+    position: absolute;
+    bottom: 0;
 }
 
 footer h3 {

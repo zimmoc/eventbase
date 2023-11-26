@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 eventsList = data;
                 console.log(eventsList);
             });
+        searchResult();
     };
 
     /**
@@ -28,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("Input registered");
 
             fetchData(keyword);
+
         }
     });
 
@@ -48,5 +50,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     createDatePicker();
+
+
+    function searchResult() {
+        document.getElementsByClassName('info-box')[0].innerHTML = "";
+
+    }
 
 });
