@@ -47,19 +47,23 @@ header {
 }
 
 #logo {
+    display: flex;
+    flex-direction: row;
+}
+
+#logo p {
     color: #FFF;
     font-family: "Saira Condensed";
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
-    line-height: 40px;
     text-transform: uppercase;
+    line-height: 40px;
+    position: relative;
 }
 
 #logo img {
     height: 40px;
-    width: auto;
-    background-color: orange;
     margin-right: 10px;
 }
 
@@ -320,7 +324,7 @@ footer h3 {
     line-height: 55px;
     text-transform: uppercase;
     margin-top: 48px;
-    margin-left: 150px;
+    margin-left: 15%;
 }
 
 footer ul {
