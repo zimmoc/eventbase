@@ -220,6 +220,7 @@ header ul li {
     border-left: none;
     color: white;
     text-align: center;
+    z-index: -2;
 }
 
 /* Info box row */
@@ -342,4 +343,24 @@ footer ul {
 
 footer i {
     color: white;
+}
+
+#hero-input .calendarStyle {
+    width: auto;
+    height: 63px;
+    background-color: transparent;
+    position: absolute;
+    color: transparent;
+    left: -218px;
+    z-index: -1;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0;
+
+}
+
+#input-calendar i {
+    pointer-events: none;
 }

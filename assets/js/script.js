@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let eventsList;
 
-    function fetchData(keyword, searchDate) {
-        fetch(apiUrl + `keyword=${keyword}&` + `localStartDateTime=${searchDate}&` + apiKey)
+    function fetchData(keyword) {
+        fetch(apiUrl + `keyword=${keyword}&` + apiKey)
             .then((response) => {
                 return response.json();
             })
@@ -20,22 +20,33 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     /**
-     * Get keyword from the input box when pressing enter
+     * Get keyword and date from the input box when pressing enter
      */
     document.getElementById('keywordInput').addEventListener('keydown', function (event) {
         if (event.key === 'Enter') {
             const keyword = document.getElementById('keywordInput').value;
             console.log("Input registered");
 
-            const today = new Date();
-            let day = today.getDate();
-            let month = today.getMonth();
-            let year = today.getFullYear();
-            let searchDate = `${year}-${month}-${day}`;
-
-            fetchData(keyword, searchDate);
-            console.log(searchDate);
+            fetchData(keyword);
         }
     });
+
+    function createDatePicker() {
+        const inputCalendar = document.getElementById('input-calendar');
+
+        const datePicker = document.createElement('input');
+        datePicker.type = 'date';
+        datePicker.id = 'datePicker';
+        datePicker.style.display = 'display';
+        datePicker.classList.add('calendarStyle');
+
+        inputCalendar.appendChild(datePicker);
+
+        inputCalendar.addEventListener('click', function () {
+            datePicker.style.display = datePicker.style.display === 'none' ? 'block' : 'none';
+        });
+    }
+
+    createDatePicker();
 
 });
