@@ -84,6 +84,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /**
+     * Send user to a clean homepage
+     */
+    document.getElementById('logo').addEventListener('click', function () {
+        window.location.href = "/index.html";
+        console.log("you clicked the logo");
+
+    });
+
+
+    /**
      * Hides advanced search box and changes the icon to hidden state.
      * Exists only to call when search result are shown
      */
