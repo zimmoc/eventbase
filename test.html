@@ -1,0 +1,31 @@
+<div class="searchResult">
+
+                    <img src="${concert.images[0].url}">
+                    <div class="searchTitle">
+                        <h3 class="searchName">${concert.name}</h3>
+
+                        <p class="dateResult">${concert.dates && concert.dates.start ? concert.dates.start.localDate : ''}</p>
+
+                        <p class="venueResult">
+                        ${concert._embedded && concert._embedded.venues && concert._embedded.venues[0] ? concert._embedded.venues[0].city.name : ''}, ${concert._embedded && concert._embedded.venues && concert._embedded.venues[0] ? concert._embedded.venues[0].country.name : ''}
+                        </p>
+                    </div>
+
+                <div class="resultInfo">
+
+                    <span class="orange-rect"></span>
+
+                    <p>Venue: ${concert._embedded && concert._embedded.venues && concert._embedded.venues[0] ? concert._embedded.venues[0].name : ''}</p >
+
+                    <p>${concert.classifications && concert.classifications[0] && concert.classifications[0].genre ? concert.classifications[0].genre.name : ''}</p>
+                    
+                </div>
+                <div class="resultTickets">
+
+                        <span class="orange-rect"></span>
+
+                        <p>Tickets go on sale: ${concert.sales && concert.sales.public ? concert.sales.public.startDateTime : ''}</p>
+                        <p>Buy tickets: <a href="${concert.url}" target="_blank">Ticketmaster</a></p>
+
+                </div>
+</div>

@@ -9,14 +9,13 @@ document.addEventListener("DOMContentLoaded", function () {
     let eventsList = [];
 
     function fetchData(keyword) {
-        fetch(apiUrl + `keyword=${keyword}&` + apiKey)
+        fetch(apiUrl + `keyword=${keyword}&` + 'sort=date,asc&' + apiKey)
             .then((response) => {
                 return response.json();
             })
 
             .then((data) => {
                 eventsList = data._embedded.events;
-                console.log(eventsList);
                 searchResult();
             });
 
@@ -58,42 +57,55 @@ document.addEventListener("DOMContentLoaded", function () {
         searchList.classList.add('resultsList');
         searchList.classList.remove('info-box');
 
-        /* for (let i = 0; i < eventsList.length; i++) {
-            const eventName = eventsList[i].name || 'Event Name Not Specified';
-
-            let htmlContent = `
-            <h3>${eventName}</h3>
-            `;
-
-            searchList.innerHTML = htmlContent;
-
-        }
-        */
-
-        let htmlContent;
 
 
+        let htmlContent = '';
+        console.log(eventsList[0]);
+
+        /**
+         * Lopps through the eventsList array and creates a html div for each event with sub values
+         */
         eventsList.forEach((concert) =>
             htmlContent += `
             <div class="searchResult">
-                    <h3 class="searchName">${concert.name}</h3>
-                    <p class="dateResult">${concert.dates.start.localDate}</p>
-                <div class="resultInfo">
-                    <span class="orange-rect"></span>
-                    <p></p>
-                    <p></p>
+
+                <img src="${concert.images[0].url}">
+                <div class="columns">
+                    <div class="searchTitle">
+                        <h3 class="searchName">${concert.name}</h3>
+
+                        <p class="dateResult">${concert.dates && concert.dates.start ? concert.dates.start.localDate : ''}, &nbsp;</p>
+
+                        <p class="venueResult"> 
+                        ${concert._embedded && concert._embedded.venues && concert._embedded.venues[0] ? concert._embedded.venues[0].city.name : ''}, ${concert._embedded && concert._embedded.venues && concert._embedded.venues[0] ? concert._embedded.venues[0].country.name : ''}
+                    </p>
+                    </div>
+                <div class="resultRows">
+                    <span class="orange-box"></span>
+                    <div class="resultInfo">
+
+
+                        <p>Venue: ${concert._embedded && concert._embedded.venues && concert._embedded.venues[0] ? concert._embedded.venues[0].name : ''}</p >
+
+                        <p>${concert.classifications && concert.classifications[0] && concert.classifications[0].genre ? concert.classifications[0].genre.name : ''}</p>
+                        
+                    </div>
+                    <span class="orange-box"></span>
+                    <div class="resultTickets">
+
+
+                            <p>Tickets go on sale: ${concert.sales && concert.sales.public ? concert.sales.public.startDateTime : ''}</p>
+                            <p>Buy tickets: <a href="${concert.url}" target="_blank">Ticketmaster</a></p>
+
+                    </div>
                 </div>
-                <div class="resultTickets">
-                    <span class="orange-rect"></span>
-                    <p></p>
-                    <p></p>
                 </div>
             </div>
-            `
+        `
 
         );
 
         searchList.innerHTML = htmlContent;
     }
 
-});
+});;;
