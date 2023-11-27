@@ -2,13 +2,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     console.log("loaded DOM");
 
+    document.getElementById("dateInput").valueAsDate = new Date();
+
     const apiUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?';
     const apiKey = 'apikey=Hf0KqGJKBsqkawRAf25zge6dH6S2t2EA';
 
     let eventsList = [];
 
-    function fetchData(keyword) {
-        fetch(apiUrl + `keyword=${keyword}&` + 'sort=date,name,asc&' + apiKey)
+    function fetchData(keyword, city, genre, isoDate) {
+        fetch(apiUrl + `keyword=${keyword}&` + `city=${city}&` + `startDateTime=${isoDate}&` + `classificationName=${genre}&` + 'sort=relevance,desc&' + apiKey)
             .then((response) => {
                 return response.json();
             })
@@ -22,18 +24,29 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     /**
-     * Get keyword and date from the input box when pressing enter
+     * Get keyword from the input box when pressing enter
      */
     document.getElementById('keywordInput').addEventListener('keydown', function (event) {
         if (event.key === 'Enter') {
             const keyword = document.getElementById('keywordInput').value;
-            console.log("Input registered");
+            const city = document.getElementById('cityInput').value;
+            const genre = document.getElementById('genreInput').value;
+            const date = new Date(document.getElementById('dateInput').value);
 
-            fetchData(keyword);
+            let isoDate = date.toISOString();
+            isoDate = isoDate.split('.')[0] + "Z";
+            console.log(keyword, city, genre, isoDate);
+            fetchData(keyword, city, genre, isoDate);
 
         }
     });
 
+
+    /**
+     * Show or hide "filter-search" div based on user interaction with icon 
+     * in the search bar
+     * Also change icon to "up" or "down" arrow depending on div state
+     */
     document.getElementById('input-calendar').addEventListener('click', function (event) {
 
         let collapse = document.getElementById('filter-search');
@@ -50,27 +63,23 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-
-
-
-    /* function createDatePicker() {
-         const inputCalendar = document.getElementById('input-calendar');
- 
-         const datePicker = document.createElement('input');
-         datePicker.type = 'date';
-         datePicker.id = 'datePicker';
-         datePicker.style.display = 'display';
-         datePicker.classList.add('calendarStyle');
- 
-         inputCalendar.appendChild(datePicker);
- 
-     }
+    /**
+     * Hides advanced search box and changes the icon to hidden state.
+     * Exists only to call when search result are shown
      */
+    function closeSearch() {
+        let icon = document.getElementById('filter-icons');
+        let collapse = document.getElementById('filter-search');
+        collapse.style.display = 'none';
+        icon.classList.remove('fa-chevron-up');
+        icon.classList.add('fa-chevron-down');
+    };
 
 
 
 
     function searchResult() {
+        closeSearch();
         let searchList = document.getElementsByClassName('info-box')[0];
         searchList.classList.add('resultsList');
         searchList.classList.remove('info-box');
