@@ -13,11 +13,16 @@ document.addEventListener("DOMContentLoaded", function () {
         fetch(apiUrl + `keyword=${keyword}&` + `city=${city}&` + `startDateTime=${isoDate}&` + `classificationName=${genre}&` + 'sort=relevance,desc&' + apiKey)
             .then((response) => {
                 return response.json();
+
             })
 
             .then((data) => {
                 eventsList = data._embedded.events;
                 searchResult();
+            })
+
+            .catch(error => {
+                alert('No search results found');
             });
 
 
@@ -109,6 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     function searchResult() {
+
         closeSearch();
         let searchList = document.getElementById('dynamicHTML');
         searchList.classList.add('resultsList');
