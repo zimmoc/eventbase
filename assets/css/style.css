@@ -375,8 +375,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     width: 1107px;
     margin-left: 12%;
     margin-right: 12%;
-    border: solid 1px black;
     height: 200px;
+    border-bottom: 1px solid #000;
 
 }
 
@@ -389,8 +389,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-style: normal;
     font-weight: 600;
     line-height: 55px;
-    max-width: 500px;
-    overflow: hidden;
+    max-width: 400px;
+    overflow: clip;
     text-overflow: ellipsis;
     white-space: nowrap;
 

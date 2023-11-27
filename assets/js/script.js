@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let eventsList = [];
 
     function fetchData(keyword) {
-        fetch(apiUrl + `keyword=${keyword}&` + 'sort=date,asc&' + apiKey)
+        fetch(apiUrl + `keyword=${keyword}&` + 'sort=date,name,asc&' + apiKey)
             .then((response) => {
                 return response.json();
             })
