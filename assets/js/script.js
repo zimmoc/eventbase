@@ -36,18 +36,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    function createDatePicker() {
-        const inputCalendar = document.getElementById('input-calendar');
-
-        const datePicker = document.createElement('input');
-        datePicker.type = 'date';
-        datePicker.id = 'datePicker';
-        datePicker.style.display = 'display';
-        datePicker.classList.add('calendarStyle');
-
-        inputCalendar.appendChild(datePicker);
-
-    }
+    /* function createDatePicker() {
+         const inputCalendar = document.getElementById('input-calendar');
+ 
+         const datePicker = document.createElement('input');
+         datePicker.type = 'date';
+         datePicker.id = 'datePicker';
+         datePicker.style.display = 'display';
+         datePicker.classList.add('calendarStyle');
+ 
+         inputCalendar.appendChild(datePicker);
+ 
+     }
+     */
 
 
 
@@ -68,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
          * The ternary operators are required to get the values because they
          * return "undefined" without doing truthy checks on all values in
          * the path. It just works.
+         * There might be an other solution, but I havent found one.
          */
         eventsList.forEach((concert) =>
             htmlContent += `
