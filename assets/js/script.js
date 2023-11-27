@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /**
      * Get keyword from the input box when pressing enter
+     * also gets all the other parameters as a fail safe as to not miss users 
+     * custom search
      */
     document.getElementById('keywordInput').addEventListener('keydown', function (event) {
         if (event.key === 'Enter') {
@@ -40,6 +42,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
     });
+
+    /**
+     * Get all input parameters when clicking the search button
+     */
+    document.getElementById('search-btn').addEventListener('click', function () {
+        const keyword = document.getElementById('keywordInput').value;
+        const city = document.getElementById('cityInput').value;
+        const genre = document.getElementById('genreInput').value;
+        const date = new Date(document.getElementById('dateInput').value);
+
+        let isoDate = date.toISOString();
+        isoDate = isoDate.split('.')[0] + "Z";
+        console.log(keyword, city, genre, isoDate);
+        fetchData(keyword, city, genre, isoDate);
+
+    });
+
 
 
     /**
