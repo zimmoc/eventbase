@@ -479,7 +479,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     flex-direction: row;
     height: 56px;
     margin-top: 27px;
-    gap: 5px;
+    gap: 10px;
 }
 
 .resultRows .orange-box {
@@ -490,7 +490,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 #shorten {
-    width: 24ch;
+    width: 20ch;
     overflow: hidden;
     text-overflow: hidden;
     white-space: nowrap;
