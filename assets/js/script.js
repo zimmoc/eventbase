@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+
     /**
      * Hides advanced search box and changes the icon to hidden state.
      * Exists only to call when search result are shown
@@ -80,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function searchResult() {
         closeSearch();
-        let searchList = document.getElementsByClassName('info-box')[0];
+        let searchList = document.getElementById('dynamicHTML');
         searchList.classList.add('resultsList');
         searchList.classList.remove('info-box');
 
