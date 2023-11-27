@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     console.log("loaded DOM");
-    createDatePicker();
 
     const apiUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?';
     const apiKey = 'apikey=Hf0KqGJKBsqkawRAf25zge6dH6S2t2EA';
@@ -34,6 +33,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
     });
+
+    document.getElementById('input-calendar').addEventListener('click', function (event) {
+
+        let collapse = document.getElementById('filter-search');
+        let icon = document.getElementById('filter-icons');
+
+        if (collapse.style.display == 'none') {
+            collapse.style.display = 'block';
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-up');
+        } else if (collapse.style.display = 'block') {
+            collapse.style.display = 'none';
+            icon.classList.remove('fa-chevron-up');
+            icon.classList.add('fa-chevron-down');
+        }
+    });
+
+
 
 
     /* function createDatePicker() {

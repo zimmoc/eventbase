@@ -227,7 +227,6 @@ header ul li {
 /* Filter input window */
 
 #filter-search {
-    display: block;
     position: absolute;
     top: 74px;
     left: 0;
@@ -236,7 +235,7 @@ header ul li {
     border: solid 1px black;
     width: 100%;
     border-radius: 5px;
-    display: block;
+    display: none;
     padding: 10px;
 }
 
@@ -451,7 +450,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 #input-calendar i {
-    pointer-events: none;
+    cursor: pointer;
 }
 
 /* Search result */
