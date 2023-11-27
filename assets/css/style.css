@@ -385,11 +385,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .searchName {
     color: #000000;
     font-family: "Saira Condensed";
-    font-size: 50px;
+    font-size: 40px;
     font-style: normal;
     font-weight: 600;
     line-height: 55px;
-    max-width: 400px;
+    max-width: 850px;
     overflow: clip;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -402,8 +402,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 55px;
-    margin-left: 10px;
 }
 
 .venueResult {
@@ -412,7 +410,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 55px;
 }
 
 .resultInfo {
@@ -458,6 +455,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     height: 56px;
 }
 
+.resultCountry {
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    height: 56px;
+}
+
 .searchResult {
     display: flex;
 }
@@ -472,7 +479,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     flex-direction: row;
     height: 56px;
     margin-top: 27px;
-    gap: 20px;
+    gap: 5px;
 }
 
 .resultRows .orange-box {
@@ -480,4 +487,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     height: 56px;
     background-color: #F49C1F;
     display: flex;
+}
+
+#shorten {
+    width: 24ch;
+    overflow: hidden;
+    text-overflow: hidden;
+    white-space: nowrap;
 }

@@ -73,12 +73,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="columns">
                     <div class="searchTitle">
                         <h3 class="searchName">${concert.name}</h3>
-
-                        <p class="dateResult">${concert.dates && concert.dates.start ? concert.dates.start.localDate : ''}, &nbsp;</p>
-
-                        <p class="venueResult"> 
-                        ${concert._embedded && concert._embedded.venues && concert._embedded.venues[0] ? concert._embedded.venues[0].city.name : ''}, ${concert._embedded && concert._embedded.venues && concert._embedded.venues[0] ? concert._embedded.venues[0].country.name : ''}
-                    </p>
                     </div>
                 <div class="resultRows">
                     <span class="orange-box"></span>
@@ -94,9 +88,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     <div class="resultTickets">
 
 
-                            <p>Tickets go on sale: ${concert.sales && concert.sales.public ? concert.sales.public.startDateTime : ''}</p>
+                            <p id="shorten">Tickets go on sale: ${concert.sales && concert.sales.public ? concert.sales.public.startDateTime : ''}</p>
                             <p>Buy tickets: <a href="${concert.url}" target="_blank">Ticketmaster</a></p>
 
+                    </div>
+                    <span class="orange-box"></span>
+                    <div class="resultCountry">
+                        <p class="dateResult">${concert.dates && concert.dates.start ? concert.dates.start.localDate : ''}</p>
+
+                        <p class="venueResult"> 
+                        ${concert._embedded && concert._embedded.venues && concert._embedded.venues[0] ? concert._embedded.venues[0].city.name : ''}, ${concert._embedded && concert._embedded.venues && concert._embedded.venues[0] ? concert._embedded.venues[0].country.countryCode : ''}</p>
                     </div>
                 </div>
                 </div>
