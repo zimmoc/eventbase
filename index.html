@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Meta tags for SEO-->
+    <meta name="description" content="Live events finder, showing concerts near me">
+    <meta name="keywords" content="concerts, sportingevents, music, festival, experience">
     <!--font awesome-->
     <script src="https://kit.fontawesome.com/17e00cb31c.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="assets/css/style.css">
+
     <title>Eventbase</title>
 </head>
 <body>
@@ -29,7 +33,8 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input id="keywordInput" type="text" placeholder="Search by keyword">
                 <div id="input-calendar"><i id="filter-icons" class="fa-solid fa-chevron-down"></i></div>
-                <!--Filter input-->
+
+                <!--Advanced search-->
                 <div id="filter-search">
                     <p style="text-align: center;font-size: 16px;">Advanced search</p>
                     <span class="filterRows">
@@ -58,9 +63,9 @@
             </div>
 
 
-            </section>
         </section>
 
+        <!-- Section that searchResult() modifies -->
         <section id="dynamicHTML" class="info-box">
             <img src="assets/images/band.jpg">
             <div class="info-text">
@@ -84,6 +89,7 @@
     <footer>
         <h3>ready for <br>your next<br> <span class="orange-text">experience?</span></h3>
 
+        <!-- Socials -->
         <ul id="social-networks">
           <li><a href="https://github.com/zimmoc" target="_blank" rel="noopener" aria-label="Visit my Github page (Opens in a new tab)"><i class="fa-brands fa-square-github"></i></a>
           </li>

@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
             })
 
             .catch(error => {
-                alert('No search results found');
+                alert('No search results found. Please try again.');
             });
 
 
@@ -35,6 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     document.getElementById('keywordInput').addEventListener('keydown', function (event) {
         if (event.key === 'Enter') {
+            let icon = document.getElementById('filter-icons');
+            icon.className = 'fa-solid fa-spinner fa-spin';
             const keyword = document.getElementById('keywordInput').value;
             const city = document.getElementById('cityInput').value;
             const genre = document.getElementById('genreInput').value;
@@ -52,6 +54,10 @@ document.addEventListener("DOMContentLoaded", function () {
      * Get all input parameters when clicking the search button
      */
     document.getElementById('search-btn').addEventListener('click', function () {
+
+        let icon = document.getElementById('filter-icons');
+        icon.className = 'fa-solid fa-spinner fa-spin';
+
         const keyword = document.getElementById('keywordInput').value;
         const city = document.getElementById('cityInput').value;
         const genre = document.getElementById('genreInput').value;
@@ -176,6 +182,9 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
         searchList.innerHTML = htmlContent;
+
+        let icon = document.getElementById('filter-icons');
+        icon.className = 'fa-solid fa-chevron-down';
     }
 
 });;;
