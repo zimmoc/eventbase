@@ -65,6 +65,7 @@ header {
 
 #logo img {
     height: 40px;
+    width: auto;
     margin-right: 10px;
 }
 
@@ -138,8 +139,6 @@ main {
     height: 100%;
     width: 110%;
     background: #E8E7E8;
-    -webkit-transform: rotate(-5deg);
-    -moz-transform: rotate(-5deg);
     transform: rotate(-5deg);
 }
 
@@ -374,7 +373,6 @@ main {
     display: flex;
     flex-wrap: nowrap;
     padding-left: 160px;
-    -ms-flex-align: center;
 }
 
 .info-box img {
@@ -417,8 +415,7 @@ main {
     background-color: #F49C1F;
     margin-right: 10px;
     position: relative;
-    top: 11px;
-    align-self: top;
+    margin-top: 11px;
     line-height: 27px;
 }
 
@@ -498,16 +495,6 @@ footer ul {
 
 footer i {
     color: white;
-}
-
-#hero-input .calendarStyle {
-    width: auto;
-    height: 63px;
-    background-color: transparent;
-    position: absolute;
-    color: transparent;
-    left: -218px;
-    z-index: -1;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -646,6 +633,5 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 #shorten {
     width: 20ch;
     overflow: hidden;
-    text-overflow: hidden;
     white-space: nowrap;
 }
