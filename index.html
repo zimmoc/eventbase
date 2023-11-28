@@ -1,116 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Meta tags for SEO-->
-    <meta name="description" content="Live events finder, showing concerts near me">
-    <meta name="keywords" content="concerts, sportingevents, music, festival, experience">
+    <meta
+      name="description"
+      content="Live events finder, showing concerts near me"
+    />
+    <meta
+      name="keywords"
+      content="concerts, sportingevents, music, festival, experience"
+    />
     <!--font awesome-->
-    <script src="https://kit.fontawesome.com/17e00cb31c.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/17e00cb31c.js"
+      crossorigin="anonymous"
+    ></script>
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
 
     <title>Eventbase</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-            <div id="logo">
-                <img src="assets/images/logo.svg">
-                <p>EVENTBASE</p>
-            </div>
-            
+      <div id="logo">
+        <img src="assets/images/logo.svg" />
+        <p>EVENTBASE</p>
+      </div>
     </header>
 
     <main>
-        <section id="hero">
-            <div id="hero-img" alt="Packed concert at night with neon lights on the scene"></div>
+      <section id="hero">
+        <div
+          id="hero-img"
+          alt="Packed concert at night with neon lights on the scene"
+        ></div>
 
-            <h2 id="hero-text">music is <br>
-                the <span class="orange-text">answer</span></h2>
+        <h2 id="hero-text">
+          music is <br />
+          the <span class="orange-text">answer</span>
+        </h2>
 
-            <div id="hero-input">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input id="keywordInput" type="text" placeholder="Search by keyword">
-                <div id="input-calendar"><i id="filter-icons" class="fa-solid fa-chevron-down"></i></div>
+        <div id="hero-input">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input
+            id="keywordInput"
+            type="text"
+            placeholder="Search by keyword"
+          />
+          <div id="input-calendar">
+            <i id="filter-icons" class="fa-solid fa-chevron-down"></i>
+          </div>
 
-                <!--Advanced search-->
-                <div id="filter-search">
-                    <p style="text-align: center;font-size: 16px;">Advanced search</p>
-                    <span class="filterRows">
-                        <div>
-                            <p class="input-Text">City</p>
-                            <input id="cityInput" type="text" placeholder='“Madrid”...'>
-                        </div>
-                        <div>
-                            <p class="input-Text">Genre</p>
-                            <input id="genreInput" type="text" placeholder=' “Music”, "Soccer"...'>
-                        </div>
-                    </span>
-                    <span class="filterRows">  
-                        <div>
-                            <p class="input-Text">From date</p>
-                            <input id="dateInput" type="date" placeholder="Search for city, artist or genre">
-                        </div>
-                        <div class="filterButtons">
-                            <p class="filter-close">cancel</p>
-                            <button id="search-btn" class="search-btn">Search</button>
-                        </div>
-                    </span>
-                </div>
+          <!--Advanced search-->
+          <div id="filter-search">
+            <p style="text-align: center; font-size: 16px">Advanced search</p>
+            <span class="filterRows">
+              <div>
+                <p class="input-Text">City</p>
+                <input id="cityInput" type="text" placeholder="“Madrid”..." />
+              </div>
+              <div>
+                <p class="input-Text">Genre</p>
+                <input
+                  id="genreInput"
+                  type="text"
+                  placeholder=' “Music”, "Soccer"...'
+                />
+              </div>
+            </span>
+            <span class="filterRows">
+              <div>
+                <p class="input-Text">From date</p>
+                <input
+                  id="dateInput"
+                  type="date"
+                  placeholder="Search for city, artist or genre"
+                />
+              </div>
+              <div class="filterButtons">
+                <p class="filter-close">cancel</p>
+                <button id="search-btn" class="search-btn">Search</button>
+              </div>
+            </span>
+          </div>
 
-                <!-- Search error handling -->
+          <!-- Search error handling -->
 
-                <div id="error-search">
-                    <i class="fa-solid fa-triangle-exclamation"></i>
-                    <h3>No search results found.<br>Please try again!</h3>
-                </div>
+          <div id="error-search">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <h3>No search results found.<br />Please try again!</h3>
+          </div>
+        </div>
+      </section>
 
-
-            </div>
-
-
-        </section>
-
-        <!-- Section that searchResult() modifies -->
-        <section id="dynamicHTML" class="info-box">
-            <img src="assets/images/band.jpg" alt="Audience with raised hands infront of concert scene">
-            <div class="info-text">
-                <div class="title-deco">
-                    <span class="orange-rect"></span>
-                    <h3>Your favorite bands, all in one place</h3>
-                </div>
-                <p>
-                    Get the scoop on all the local action with our versatile event hub! Find upcoming concerts, football showdowns, and a range of sports events happening in your area. Tailor your experience by naming your top bands and favorite teams, ensuring you catch every beat and kick that matters to you. Explore the dynamic entertainment scene – your next exciting event is waiting!
-                </p>
-                <button class="orange-btn">Find your next event!</button>
-            </div>
-            
-        </section>
-
-
-
-
+      <!-- Section that searchResult() modifies -->
+      <section id="dynamicHTML" class="info-box">
+        <img
+          src="assets/images/band.jpg"
+          alt="Audience with raised hands infront of concert scene"
+        />
+        <div class="info-text">
+          <div class="title-deco">
+            <span class="orange-rect"></span>
+            <h3>Your favorite bands, all in one place</h3>
+          </div>
+          <p>
+            Get the scoop on all the local action with our versatile event hub!
+            Find upcoming concerts, football showdowns, and a range of sports
+            events happening in your area. Tailor your experience by naming your
+            top bands and favorite teams, ensuring you catch every beat and kick
+            that matters to you. Explore the dynamic entertainment scene – your
+            next exciting event is waiting!
+          </p>
+          <button class="orange-btn">Find your next event!</button>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <h3>ready for <br>your next<br> <span class="orange-text">experience?</span></h3>
+      <h3>
+        ready for <br />your next<br />
+        <span class="orange-text">experience?</span>
+      </h3>
 
-        <!-- Socials -->
-        <ul id="social-networks">
-          <li><a href="https://github.com/zimmoc" target="_blank" rel="noopener" aria-label="Visit my Github page (Opens in a new tab)"><i class="fa-brands fa-square-github"></i></a>
-          </li>
+      <!-- Socials -->
+      <ul id="social-networks">
+        <li>
+          <a
+            href="https://github.com/zimmoc"
+            target="_blank"
+            rel="noopener"
+            aria-label="Visit my Github page (Opens in a new tab)"
+            ><i class="fa-brands fa-square-github"></i
+          ></a>
+        </li>
 
-          <li><a href="https://twitter.com/Commis4235" target="_blank" rel="noopener" aria-label="Visit my X page (Opens in a new tab)"><i class="fa-brands fa-square-x-twitter"></i></a>
-          </li>
+        <li>
+          <a
+            href="https://twitter.com/Commis4235"
+            target="_blank"
+            rel="noopener"
+            aria-label="Visit my X page (Opens in a new tab)"
+            ><i class="fa-brands fa-square-x-twitter"></i
+          ></a>
+        </li>
 
-          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Visit our Instagram page (Opens in a new tab)"><i class="fa-brands fa-square-instagram"></i></a>
-          </li>
-        </ul>
+        <li>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Visit our Instagram page (Opens in a new tab)"
+            ><i class="fa-brands fa-square-instagram"></i
+          ></a>
+        </li>
+      </ul>
     </footer>
 
-
     <script src="assets/js/script.js"></script>
-    
-</body>
+  </body>
 </html>
