@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     console.log("loaded DOM");
 
+    // Fills date input with todays date as default
     document.getElementById("dateInput").valueAsDate = new Date();
 
     const apiUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?';
@@ -32,6 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
      * Get keyword from the input box when pressing enter
      * also gets all the other parameters as a fail safe as to not miss users 
      * custom search
+     * &
+     * Replaces advanced search button with a static spinner
      */
     document.getElementById('keywordInput').addEventListener('keydown', function (event) {
         if (event.key === 'Enter') {
@@ -42,9 +45,10 @@ document.addEventListener("DOMContentLoaded", function () {
             const genre = document.getElementById('genreInput').value;
             const date = new Date(document.getElementById('dateInput').value);
 
+            // Converts date into format asked by API
             let isoDate = date.toISOString();
             isoDate = isoDate.split('.')[0] + "Z";
-            console.log(keyword, city, genre, isoDate);
+
             fetchData(keyword, city, genre, isoDate);
 
         }
@@ -52,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /**
      * Get all input parameters when clicking the search button
-     * Also replaces filter button with a static spinner
+     * Also replaces advanced search button with a static spinner
      */
     document.getElementById('search-btn').addEventListener('click', function () {
 
@@ -66,7 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let isoDate = date.toISOString();
         isoDate = isoDate.split('.')[0] + "Z";
-        console.log(keyword, city, genre, isoDate);
         fetchData(keyword, city, genre, isoDate);
 
     });
@@ -102,11 +105,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /**
-     * Send user to a clean homepage
+     * Send user to a clean homepage when clicking logo
      */
     document.getElementById('logo').addEventListener('click', function () {
         window.location.href = "/index.html";
-        console.log("you clicked the logo");
 
     });
 
@@ -140,7 +142,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         let htmlContent = '';
-        console.log(eventsList[0]);
 
         /**
          * Loops through the eventsList array and creates a html div for each event with sub values.
@@ -200,8 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /**
-     * Display simple error box under search box if api fetch returns nothing
-     * valid
+     * Display simple error box under search input if api fetch throws error
      */
     function searchError() {
         const error = document.getElementById('error-search');
