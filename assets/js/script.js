@@ -206,6 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const error = document.getElementById('error-search');
         let icon = document.getElementById('filter-icons');
 
+        closeSearch();
         icon.className = 'fa-solid fa-chevron-up';
 
         error.style.display = 'flex';
