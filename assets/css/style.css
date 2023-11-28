@@ -235,7 +235,7 @@ main {
     z-index: -2;
 }
 
-/* Filter input window */
+/* Advanced search window */
 
 #filter-search {
     position: absolute;
@@ -324,7 +324,7 @@ main {
     text-shadow: -2px -2px 4px rgba(0, 0, 0, 0.25), 2px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
-/* Search error handling */
+/* Search error window */
 
 #error-search {
     position: absolute;
