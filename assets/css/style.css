@@ -122,7 +122,7 @@ main {
 }
 
 #hero-img {
-    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/hero.jpg") no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/hero.jpg") no-repeat center -400px/cover;
     width: 100vw;
     height: 629px;
     overflow: hidden;
@@ -155,6 +155,7 @@ main {
     top: 204px;
     left: 15%;
     max-width: 1440px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
 }
 
 #hero-input {
