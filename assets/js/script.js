@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    console.log("loaded DOM");
 
     // Fills date input with todays date as default
     document.getElementById("dateInput").valueAsDate = new Date();
