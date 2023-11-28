@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let eventsList = [];
 
     function fetchData(keyword, city, genre, isoDate) {
-        fetch(apiUrl + `keyword=${keyword}&` + `city=${city}&` + `startDateTime=${isoDate}&` + `classificationName=${genre}&` + 'sort=relevance,desc&' + apiKey)
+        fetch(apiUrl + `keyword=${keyword}&` + `city=${city}&` + `startDateTime=${isoDate}&` + `classificationName=${genre}&` + 'sort=date,name,asc&' + apiKey)
             .then((response) => {
                 return response.json();
 
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
             })
 
             .catch(error => {
-                alert('No search results found. Please try again.');
+                searchError();
             });
 
 
@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /**
      * Get all input parameters when clicking the search button
+     * Also replaces filter button with a static spinner
      */
     document.getElementById('search-btn').addEventListener('click', function () {
 
@@ -81,6 +82,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let collapse = document.getElementById('filter-search');
         let icon = document.getElementById('filter-icons');
+        let error = document.getElementById('error-search');
+
+        if (error.style.display == 'flex') {
+            error.style.display = 'none';
+        }
+
 
         if (collapse.style.display == 'none') {
             collapse.style.display = 'block';
@@ -119,6 +126,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+    /**
+     * Clears info-box html content and replaces it with search results from
+     *  API query
+     */
     function searchResult() {
 
         closeSearch();
@@ -187,4 +198,18 @@ document.addEventListener("DOMContentLoaded", function () {
         icon.className = 'fa-solid fa-chevron-down';
     }
 
-});;;
+
+    /**
+     * Display simple error box under search box if api fetch returns nothing
+     * valid
+     */
+    function searchError() {
+        const error = document.getElementById('error-search');
+        let icon = document.getElementById('filter-icons');
+
+        icon.className = 'fa-solid fa-chevron-up';
+
+        error.style.display = 'flex';
+    }
+
+});
