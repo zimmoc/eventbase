@@ -212,4 +212,12 @@ document.addEventListener("DOMContentLoaded", function () {
         error.style.display = 'flex';
     }
 
+
+    /**
+     * Focus input window when clicking on button
+     */
+    document.getElementById("orange-btn").addEventListener('click', function () {
+        document.getElementById('keywordInput').focus();
+    });
+
 });
