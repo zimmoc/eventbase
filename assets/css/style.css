@@ -9,6 +9,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+
 }
 
 
@@ -21,6 +22,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 .orange-text {
@@ -35,8 +37,8 @@ header {
     max-width: 1440px;
     height: 40px;
     margin-top: 20px;
-    padding-left: 11.11%;
-    padding-right: 11.11%;
+    justify-items: center;
+    padding-left: 25px;
     position: absolute;
     top: 0;
     z-index: 99;
@@ -100,6 +102,14 @@ header ul li {
 
 /* Main content */
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1440px;
+    width: 100%;
+}
+
 
 
 /* Hero section */
@@ -112,8 +122,8 @@ header ul li {
 }
 
 #hero-img {
-    background: url("../images/hero.jpg") no-repeat center -320px/cover;
-    width: 1440px;
+    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/hero.jpg") no-repeat center center/cover;
+    width: 100vw;
     height: 629px;
     overflow: hidden;
     position: relative;
@@ -143,7 +153,8 @@ header ul li {
     line-height: 90px;
     position: absolute;
     top: 204px;
-    margin-left: 160px;
+    left: 15%;
+    max-width: 1440px;
 }
 
 #hero-input {
@@ -347,6 +358,12 @@ header ul li {
 
 
 
+/*DynamicHTML section*/
+
+#dynamicHTML {
+    width: 100%;
+    max-width: 1440px;
+}
 
 /* Info box row */
 
@@ -443,18 +460,26 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
+    justify-content: center;
+}
+
+#footer-content {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
 }
 
 footer h3 {
     color: #FFF;
-    font-family: Saira Condensed;
+    font-family: "Saira Condensed";
     font-size: 50px;
     font-style: normal;
     font-weight: 700;
     line-height: 55px;
     text-transform: uppercase;
     margin-top: 48px;
-    margin-left: 15%;
+    padding-left: 25px;
 }
 
 footer ul {
@@ -464,7 +489,7 @@ footer ul {
     display: flex;
     flex-direction: row;
     gap: 30px;
-    position: absolute;
+    position: relative;
     right: 160px;
     text-align: center;
     line-height: 250px;
