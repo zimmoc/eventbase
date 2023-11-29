@@ -8,10 +8,10 @@ Eventbase shows you upcoming events filtered by city, date, genre, or a general 
 
 - __Hero section__
 
-  - Big eye catching hero image that encourages the user to search for upcoming events
+  - Big eye-catching hero image that encourages the user to search for upcoming events
   - Clickable logo that brings you to the home page
   - Big input field in the middle of the screen that can't be missed
-  - Advanced search provided by clicking on the universal show more button, the arrow down.
+  - Advanced search is provided by clicking on the universal show more button, the arrow down.
 
 ![Hero Section](/assets/images/readme/landing.jpg)
 
@@ -19,11 +19,11 @@ Eventbase shows you upcoming events filtered by city, date, genre, or a general 
 
   - Familiar magnifying glass icon to show the user that this is indeed a search field
   ![Search field](/assets/images/readme/searchfield.png)
-  - Spinner icon while fetching data to show user that their seach query was received.
+  - Spinner icon while fetching data to show users that their search query was received.
   ![spinner](/assets/images/readme/assets.png)
 
 - __Advanced search__
-    - Let's the user refine their search by adding variables like their city, date they're free and a genre.
+    - Let the user refine their search by adding variables like their city, the date they're free, and genre.
     - Search button with interaction states
     - When opening advanced search the arrow down changes to an arrow up to show the user that they can close the advanced search window
     ![Advanced search](/assets/images/readme/advancedsearch.png)
@@ -42,10 +42,10 @@ Eventbase shows you upcoming events filtered by city, date, genre, or a general 
 
 - __Search results__
     - Event name front and center to quickly identify the results.
-    - Official event picture supplied by ticketmaster
-    - Location information, including venue, city and country.
+    - Official event picture supplied by Ticketmaster
+    - Location information, including venue, city, and country.
     - Date shown in site signature color to draw attention to it.
-    - Tickets information showing when tickets go on sale and where to buy them.
+    - Ticket information showing when tickets go on sale and where to buy them.
     - Sorted by relevance that's calculated by the Ticketmaster API.
 
     ![Search results](/assets/images/readme/searchquery.png)
@@ -53,7 +53,7 @@ Eventbase shows you upcoming events filtered by city, date, genre, or a general 
 ## Upcoming Features
 
 - Feature 1: Calendar file
-    - Ability for the user to export search results as a iCal file or direct link to their google calendar
+    - Ability for the user to export search results as an iCal file or direct link to their Google calendar
 
 - Feature 2: Better filter
     - Ability to do more precise filtering, like artist or sports team
@@ -64,27 +64,27 @@ Eventbase shows you upcoming events filtered by city, date, genre, or a general 
 
 - Feature 4: Artist information
     - Ability to click on artist or sports team to get more general info about them
-    - Artist example: Popular songs, Music streaming links, social links, tour itinerary.
-    - Sports example: Placement in leaderboard, recent matches/games with scores, upcoming matches and player lineup for the picked event
+    - Artist Example: Popular songs, Music streaming links, social links, tour itinerary.
+    - Sports Example: Placement in leaderboard, recent matches/games with scores, upcoming matches, and player lineup for the picked event
 
 - Feature 5: Event information
     - The event information could be expanded to show more local to the venue information
-    - For example, Seating map, parking, bus/metro station, age restrictions, all important times, food and drinks available in the venue, alcohol policy and more.
+    - For example, Seating map, parking, bus/metro station, age restrictions, all important times, food and drinks available in the venue, alcohol policy, and more.
 
 - Feature 6: Monetization
-    - If one were to make this into an actual site it could be monetized by having a referral code automatically built into the tickets purchase link
-    - Ads, everyone hates them but if the referrals doesnt cover costs they can be added.
+    - If one were to make this into an actual site it could be monetized by having a referral code automatically built into the ticket purchase link
+    - Ads, everyone hates them but if the referrals don't cover costs they can be added.
 
 
 # Technical information
 
 ## Idea
-When brainstorming for ideas, the one that really stuck with me was this event finder tool. In my vision, I wanted the user to be able to export their search results to their calendar. However, that was a big undertaking at this stage. It's still something I want to implement in the future because it's a function I actually really want.
+When brainstorming for ideas, the one that stuck with me was this event finder tool. In my vision, I wanted the user to be able to export their search results to their calendar. However, that was a big undertaking at this stage. It's still something I want to implement in the future because it's a function I want to use.
 
 ## Planning
 
 - My initial plan for the website flow
-    - Some functions were not implemented due to difficulty and limitations of the ticketmaster API
+    - Some functions were not implemented due to the difficulty and limitations of the Ticketmaster API
 ![Brainstorm](/assets/images/readme/brainstorm.png)
 
 - For this site, I used a wireframe tool to mock up the website before I started writing the code.
@@ -127,26 +127,26 @@ When brainstorming for ideas, the one that really stuck with me was this event f
 6. API Testing:
 
 - Expected: Return results based on my search parameters
-- Testing: Added keyword, date, city and genre.
+- Testing: Added keyword, date, city, and genre.
 - Result: Received valid results
 
 6. API Error testing
 
-- Expected: Show error box telling me there's something wrong
-- Testing: Search for completely random strings and citys
+- Expected: Show an error box telling me there's something wrong
+- Testing: Search for completely random strings and cities
 - Result: Error box popped up on every test
 
 
 7. Bug Documentation:
 
-Encountered Bug: When trying to display response data from the api some values could be read and some threw an undefined error
+Encountered Bug: When trying to display response data from the API some values could be read and some threw an undefined error
 
     - Original code: ${concert._embedded.venues[0].country.countryCode}
     - Working code: "${concert._embedded && concert._embedded.venues && concert._embedded.venues[0] ? concert._embedded.venues[0].country.countryCode : ''}"
 
 This problem was really hard to figure out. I spent a lot of time searching on Google and trying different things I found on Stack Overflow and other websites. My friend Adam tried to help, but we couldn't find a solution together.
 
-To be honest i dont remember where i found the solution but either way, the solution was to add a ternary operator that checks that all stages of the path are truthy before accessing the wanted value, if no value is found it just returns an empty string.
+To be honest I don't remember where I found the solution but either way, the solution was to add a ternary operator that checks that all stages of the path are truthy before accessing the wanted value, if no value is found it just returns an empty string.
 
 
 ### Validator
@@ -157,7 +157,7 @@ When running the HTML validator, I found some small errors, like open tags. The 
 
 #### CSS
 
-There were some small errors in the css which all were values that didnt exist for that specific rule, so nothing site breaking but redundant code that didnt do anything.
+There were some small errors in the CSS which all were values that didn't exist for that specific rule, so nothing site-breaking but redundant code that didn't do anything.
 
     
 
@@ -174,7 +174,7 @@ There were some small errors in the css which all were values that didnt exist f
 
 - JavaScript
   - No valid errors were found when testing it with [JSHint](https://jshint.com/)
-  
+
   ![w3c report](/assets/images/readme/reports/jshint.png)
 
 
@@ -188,8 +188,8 @@ There were some small errors in the css which all were values that didnt exist f
  ![mobile pagespeed](/assets/images/readme/reports/mobile.png)
 
 - Desktop test
-    - Desktop test looks better.
-    - However, the cache policy is also affecting performance score here.
+    - The desktop test looks better.
+    - However, the cache policy is also affecting the performance score here.
 ![desktop pagespeed](/assets/images/readme/reports/desktop.png)
 
 - __Tests performed using [GTmetrix](https://gtmetrix.com/)__
@@ -224,7 +224,7 @@ I also received help from my friend, [Adam](https://github.com/AdamAgerling), to
 ### Documentation
 
 Since I used functions that I had not yet learned, I relied on a few guides to understand and write the base for the fetch function.
-- Api
+- API
     - [Ticketmaster API](https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/)
     - [Mozilla](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
     - [Digital ocean](https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-fetch-api-to-get-data)
