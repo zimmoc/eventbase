@@ -31,6 +31,7 @@ Eventbase shows you upcoming events filtered by city, date, genre, or a general 
 - __Error prompt__
     - If the user search returns no results this window notifies them of that in a simple, non-intrusive way
     - When the error window shows up the arrow again changes to an arrow up to show the user that they can close the error window.
+    
     ![Error prompt](/assets/images/readme/errorprompt.png)
 
 - __Text paragraph__
@@ -173,6 +174,7 @@ There were some small errors in the css which all were values that didnt exist f
 
 - JavaScript
   - No valid errors were found when testing it with [JSHint](https://jshint.com/)
+  
   ![w3c report](/assets/images/readme/reports/jshint.png)
 
 
