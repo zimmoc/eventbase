@@ -98,6 +98,9 @@ When brainstorming for ideas, the one that stuck with me was this event finder t
 
 - Expected: Buttons should perform their designated actions when clicked.
 - Testing: Clicked on each button in different sections of the site.
+- Problem: Clicking on the logo on deployed website broke the link due to github pages link layout
+- Solution: Add full homepage link
+- Retesting: Once again clicking each button
 - Result: All buttons responded as expected, performing their respective actions.
 
 2. JS Buttons Testing:

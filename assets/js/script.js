@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * Send user to a clean homepage when clicking logo
      */
     document.getElementById('logo').addEventListener('click', function () {
-        window.location.href = "/index.html";
+        window.location.href = "https://zimmoc.github.io/eventbase/index.html";
 
     });
 
