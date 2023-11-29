@@ -717,7 +717,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
     .searchResult {
         margin: 2px;
-        height: fit-content;
+        height: 450px;
         flex-direction: column;
         padding-top: 10px;
         padding-bottom: 10px;
