@@ -172,7 +172,8 @@ main {
     border-radius: 5px;
     background: white;
     box-shadow: 0px 19px 90px 0px rgba(218, 151, 9, 0.13);
-    width: 590px;
+    width: 100%;
+    max-width: 590px;
     height: 64px;
     position: absolute;
     bottom: 33px;
@@ -378,7 +379,8 @@ main {
 /* Info box row */
 
 .info-box {
-    width: 1440px;
+    width: 100%;
+    max-width: 1440px;
     min-height: 500px;
     display: flex;
     flex-wrap: nowrap;
@@ -386,8 +388,10 @@ main {
 }
 
 .info-box img {
-    height: 450px;
-    width: 422px;
+    height: 100%;
+    width: 100%;
+    max-height: 450px;
+    max-width: 422px;
     margin-top: 107px;
 }
 
@@ -395,7 +399,8 @@ main {
     margin: 115px;
     flex-direction: column;
     display: flex;
-    width: 473px;
+    width: 100%;
+    max-width: 473px;
 
 }
 
@@ -523,7 +528,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .searchResult {
     display: flex;
     margin: 20px;
-    width: 1107px;
+    width: 90%;
+    max-width: 1107px;
     margin-left: 12%;
     margin-right: 12%;
     height: 200px;
@@ -577,6 +583,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .searchResult img {
     height: 180px;
     width: 200px;
+    max-width: 200px;
     align-self: center;
     margin-left: 10px;
     margin-right: 18px;
@@ -644,4 +651,151 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     width: 20ch;
     overflow: hidden;
     white-space: nowrap;
+}
+
+
+/* Media query: to 768px */
+@media screen and (max-width: 768px) {
+
+    main {
+        max-width: 100vw;
+        align-items: center;
+    }
+
+    #hero-text {
+        font-size: 60px;
+        line-height: 60px;
+        left: 10px;
+        top: 30%
+    }
+
+    #hero-input {
+        margin: 2px;
+        bottom: 5%;
+    }
+
+    #hero-input input {
+        margin-left: 2px;
+    }
+
+    #hero-input .fa-magnifying-glass {
+        display: none;
+    }
+
+    .info-box {
+        flex-direction: column;
+        padding: 2px;
+        align-items: center;
+    }
+
+    .info-box img {
+        margin-top: 10px;
+        order: 1;
+    }
+
+    .info-text {
+        margin: 2px;
+        padding: 5px;
+    }
+
+
+
+    footer h3 {
+        font-size: 25px;
+        line-height: 30px;
+    }
+
+    footer ul {
+        flex-direction: row;
+        justify-content: center;
+        line-height: normal;
+        gap: 10px;
+        top: 48px;
+        right: 25px;
+        text-align: right;
+    }
+
+    .searchResult {
+        margin: 2px;
+        height: fit-content;
+        flex-direction: column;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .resultRows {
+        flex-direction: row;
+        flex-wrap: wrap;
+        font-size: 16px;
+    }
+
+    .searchResult img {
+        width: 80%;
+    }
+
+    .searchName {
+        line-height: 40px;
+        font-size: 30px;
+    }
+
+    .resultInfo {
+        flex-direction: row;
+        font-size: 16px;
+        font-family: "inter";
+    }
+}
+
+/* Media query: From 768px to 992px */
+@media screen and (max-width: 1100px) and (min-width: 768px) {
+
+    .info-box {
+        flex-direction: column;
+        padding: 2px;
+        align-items: center;
+    }
+
+    .info-box img {
+        margin-top: 10px;
+        order: 1;
+    }
+
+    .searchResult {
+        margin: 5%;
+        width: 90%;
+        height: fit-content;
+        flex-direction: column;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .resultRows {
+        flex-direction: row;
+        flex-wrap: wrap;
+        font-size: 16px;
+    }
+
+    .searchResult img {
+        width: 80%;
+    }
+
+    .searchName {
+        line-height: 40px;
+        font-size: 30px;
+    }
+
+    .resultInfo {
+        flex-direction: row;
+        font-size: 16px;
+        font-family: "inter";
+    }
+
+
+}
+
+/* Media query: From 992px to 1200px */
+@media screen and (max-width: 1400px) and (min-width: 992px) {
+
+    .searchResult {
+        margin: 5%;
+    }
 }
