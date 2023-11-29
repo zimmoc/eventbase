@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let eventsList = [];
 
     function fetchData(keyword, city, genre, isoDate) {
-        fetch(apiUrl + `keyword=${keyword}&` + `city=${city}&` + `startDateTime=${isoDate}&` + `classificationName=${genre}&` + 'sort=date,name,asc&' + apiKey)
+        fetch(apiUrl + `keyword=${keyword}&` + `city=${city}&` + `startDateTime=${isoDate}&` + `classificationName=${genre}&` + 'sort=relevance,asc&' + apiKey)
             .then((response) => {
                 return response.json();
 
